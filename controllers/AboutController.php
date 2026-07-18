@@ -1,4 +1,9 @@
 <?php
+// title of the page
 $pageTitle = 'About Us';
-$viewFile  = '../views/about.php';
-include '../views/layout.php';
+
+// display the view content
+$viewFile = '../resources/views/about.php';
+
+// the layout of the page
+include '../resources/views/layout.php';
