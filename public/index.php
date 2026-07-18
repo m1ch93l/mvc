@@ -1,5 +1,10 @@
 <?php
-$page = $_GET['page'] ?? 'home';
+if (empty($_GET['page'])) {
+    header('Location: ?page=home');
+    exit;
+}
+
+$page = $_GET['page'];
 
 switch ($page) {
     case 'home':
@@ -12,3 +17,4 @@ switch ($page) {
         echo "404 Not Found";
         break;
 }
+
