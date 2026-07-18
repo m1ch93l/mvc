@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <title><?php echo $pageTitle ?? 'My Site' ?></title>
 
-    <!-- css and js -->
-    <link rel="stylesheet" href="style.css">
-
 </head>
+
+<style>
+.container {
+    background-color: black;
+    border: 2px black solid;
+    color: greenyellow;
+}
+</style>
 
 <body>
     <!-- display the navigation -->

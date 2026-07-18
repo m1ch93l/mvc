@@ -1,4 +1,4 @@
-htmxphpmvc
+mvc
 ├── config/
 │   ├── database.example.php
 │   └── database.php

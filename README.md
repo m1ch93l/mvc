@@ -14,11 +14,7 @@ To install the mvc project, you can run the following command:
    ```sh
    cd mvc
    ```
-3. Install the required dependencies:
-   ```sh
-   composer install
-   ```
-4. Start a local server:
+3. Start a local server:
 
 - You can use xampp or any other local server setup.
 - Place the project files in the server's root directory (e.g., `htdocs` for XAMPP, `www` for Laragon and ServBay).
