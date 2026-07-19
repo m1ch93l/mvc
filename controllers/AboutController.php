@@ -2,6 +2,9 @@
 // title of the page
 $pageTitle = 'About Us';
 
+// css styling
+$cssFile = '../resources/css/style.css';
+
 // display the view content
 $viewFile = '../resources/views/about.php';
 
