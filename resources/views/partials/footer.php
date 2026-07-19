@@ -1,3 +1,5 @@
-<footer class="d-flex justify-content-center fixed-bottom">
-    <p>&copy; <?= date('Y') ?> My App</p>
+<footer class="fixed-bottom">
+
+    <p>&copy; <?php echo date('Y') ?> My App</p>
+
 </footer>
