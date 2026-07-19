@@ -7,6 +7,9 @@ $message = PageModel::getWelcomeMessage(); // the $message will be the content r
 // title of the page
 $pageTitle = 'Home';
 
+// css styling
+$cssFile = '../resources/css/style.css';
+
 // display the view content
 $viewFile = '../resources/views/home.php';
 
