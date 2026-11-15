@@ -1,20 +1,16 @@
 <?php
-if (empty($_GET['page'])) {
-    header('Location: ?page=home');
-    exit;
-}
 
-$page = $_GET['page'];
+declare(strict_types=1);
 
-switch ($page) {
-    case 'home':
-        require_once '../controllers/HomeController.php';
-        break;
-    case 'about':
-        require_once '../controllers/AboutController.php';
-        break;
-    default:
-        echo "404 Not Found";
-        break;
-}
+/*
+|--------------------------------------------------------------------------
+| Front controller
+|--------------------------------------------------------------------------
+|
+| Every request enters the application here. Keep this file free of
+| application logic: it only boots the app and dispatches the request.
+|
+*/
+$router = require dirname(__DIR__) . '/bootstrap/app.php';
 
+$router->dispatch();
