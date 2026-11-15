@@ -1,5 +1,5 @@
 <footer class="fixed-bottom">
 
-    <p>&copy; <?php echo date('Y') ?> My App</p>
+    <p>&copy; <?= date('Y') ?> <?= htmlspecialchars($appName) ?></p>
 
 </footer>

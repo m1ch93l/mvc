@@ -1,5 +1,5 @@
 <div class="container">
 
-    <h3><?php echo $message ?></h3>
+    <h3><?= htmlspecialchars($message) ?></h3>
 
 </div>

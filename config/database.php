@@ -1,22 +1,13 @@
 <?php
-class Database
-{
-    private static $host    = 'localhost';
-    private static $db      = 'mvc';      //database name
-    private static $user    = 'root';     //database username
-    private static $pass    = 'bsis.dev'; //database password
-    private static $charset = 'utf8mb4';
 
-    public static function connect()
-    {
-        $dsn = "mysql:host=" . self::$host . ";dbname=" . self::$db . ";charset=" . self::$charset;
-        try {
-            return new PDO($dsn, self::$user, self::$pass, [
-                PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            ]);
-        } catch (PDOException $e) {
-            die("Database connection failed: " . $e->getMessage());
-        }
-    }
-}
+declare(strict_types=1);
+
+return [
+    'driver'   => 'mysql',
+    'host'     => env('DB_HOST', '127.0.0.1'),
+    'port'     => (int) env('DB_PORT', 3306),
+    'database' => env('DB_DATABASE', 'mvc'),
+    'username' => env('DB_USERNAME', 'root'),
+    'password' => env('DB_PASSWORD', ''),
+    'charset'  => 'utf8mb4',
+];

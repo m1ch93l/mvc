@@ -1,12 +1,18 @@
 <?php
-// title of the page
-$pageTitle = 'About Us';
 
-// css styling
-$cssFile = '../resources/css/style.css';
+declare(strict_types=1);
 
-// display the view content
-$viewFile = '../resources/views/about.php';
+namespace App\Controllers;
 
-// the layout of the page
-include '../resources/views/layout.php';
+use App\Core\Controller;
+
+final class AboutController extends Controller
+{
+    public function index(): void
+    {
+        $this->view->render('pages/about', [
+            'pageTitle'  => 'About Us',
+            'activePage' => 'about',
+        ]);
+    }
+}

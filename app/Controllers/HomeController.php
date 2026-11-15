@@ -1,17 +1,26 @@
 <?php
 
-// fetch data from models
-require_once '../models/PageModel.php';
-$message = PageModel::getWelcomeMessage(); // the $message will be the content reflected to your database
+declare(strict_types=1);
 
-// title of the page
-$pageTitle = 'Home';
+namespace App\Controllers;
 
-// css styling
-$cssFile = '../resources/css/style.css';
+use App\Core\Controller;
+use App\Core\View;
+use App\Models\Page;
 
-// display the view content
-$viewFile = '../resources/views/home.php';
+final class HomeController extends Controller
+{
+    public function __construct(View $view, private readonly Page $pages)
+    {
+        parent::__construct($view);
+    }
 
-// the layout of the page
-include '../resources/views/layout.php';
+    public function index(): void
+    {
+        $this->view->render('pages/home', [
+            'pageTitle'  => 'Home',
+            'activePage' => 'home',
+            'message'    => $this->pages->welcomeMessage(),
+        ]);
+    }
+}

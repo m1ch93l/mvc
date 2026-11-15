@@ -1,13 +1,23 @@
 <?php
-require_once __DIR__ . '/../config/database.php';
 
-class PageModel
+declare(strict_types=1);
+
+namespace App\Models;
+
+use App\Core\Database;
+
+final class Page
 {
-    public static function getWelcomeMessage()
+    public function __construct(private readonly Database $database)
     {
-        $db   = Database::connect();
-        $stmt = $db->prepare("SELECT content FROM pages");
-        $stmt->execute();
-        return $stmt->fetchColumn(); // returns just the content
+    }
+
+    public function welcomeMessage(): string
+    {
+        $statement = $this->database->connection()->query(
+            'SELECT content FROM pages ORDER BY id ASC LIMIT 1'
+        );
+
+        return (string) $statement->fetchColumn();
     }
 }

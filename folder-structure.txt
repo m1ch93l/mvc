@@ -1,24 +1,49 @@
 mvc
+├── app/
+│   ├── Controllers/
+│   │   ├── AboutController.php
+│   │   └── HomeController.php
+│   ├── Core/
+│   │   ├── Container.php
+│   │   ├── Controller.php
+│   │   ├── Database.php
+│   │   ├── Router.php
+│   │   └── View.php
+│   └── Models/
+│       └── Page.php
+├── bootstrap/
+│   └── app.php
 ├── config/
-│   ├── database.example.php
+│   ├── app.php
 │   └── database.php
-├── controllers/
-│   ├── AboutController.php
-│   └── HomeController.php
-├── models/
-│   └── PageModel.php
 ├── public/
+│   ├── assets/
+│   │   └── css/
+│   │       └── style.css
 │   ├── .htaccess
 │   └── index.php
-├── views/
-│   ├── partials/
-│   │   ├── footer.php
-│   │   └── navbar.php
-│   ├── about.php
-│   ├── home.php
-│   └── layout.php
+├── resources/
+│   └── views/
+│       ├── layouts/
+│       │   └── app.php
+│       ├── pages/
+│       │   ├── 404.php
+│       │   ├── about.php
+│       │   ├── error.php
+│       │   └── home.php
+│       └── partials/
+│           ├── footer.php
+│           └── navbar.php
+├── routes/
+│   └── web.php
+├── storage/
+│   └── logs/
+├── .env.example
+├── .gitignore
 ├── .htaccess
+├── composer.json
 ├── folder-structure.txt
+├── mvc.sql
 └── README.md
 
 #Run on Localhost (on Terminal type)

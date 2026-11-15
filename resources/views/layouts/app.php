@@ -4,24 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pageTitle ?? 'My Site' ?></title>
+    <title><?= htmlspecialchars($pageTitle ?? $appName) ?></title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<style>
-    <?php include $cssFile; ?>
-</style>
-
 <body>
-    <!-- display the navigation bar -->
-    <?php include 'partials/navbar.php'; ?>
+    <?php require __DIR__ . '/../partials/navbar.php'; ?>
 
-    <!-- display the main content -->
     <main>
-        <?php include $viewFile; ?>
+        <?php require $viewFile; ?>
     </main>
 
-    <!-- display the footer content at the bottom -->
-    <?php include 'partials/footer.php'; ?>
+    <?php require __DIR__ . '/../partials/footer.php'; ?>
 </body>
 
 </html>
